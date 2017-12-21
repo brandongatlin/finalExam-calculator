@@ -1,7 +1,26 @@
 {
-  "name": "",
-  "version": "",
+  "name": "chs.midterm-calculator",
   "dependencies": {
     "inquirer": "^4.0.1"
-  }
+  },
+  "description": "exam calculator for conroe high school",
+  "version": "1.0.0",
+  "main": "grades.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandongatlin/finalExam-calculator.git"
+  },
+  "keywords": [
+    "exam",
+    "calculator"
+  ],
+  "author": "Brandon Gatlin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandongatlin/finalExam-calculator/issues"
+  },
+  "homepage": "https://github.com/brandongatlin/finalExam-calculator#readme"
 }
