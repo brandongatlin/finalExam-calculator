@@ -7,28 +7,61 @@ var examRaw = "";
 var exam = "";
 var semesterGrade = "";
 
-inquirer.prompt([{
-  name: "grade1",
-  type: "input",
-  message: "What was your grade for quarter 1?"
-}]).then(function(answer1) {
+function restart() {
   inquirer.prompt([{
-    name: "grade2",
+    name: "grade1",
     type: "input",
-    message: "What was your grade for quarter 2?"
-  }]).then(function(answer2) {
-    q1 = answer1.grade1;
-    q2 = answer2.grade2;
+    message: "What was your grade for quarter 1?"
+  }]).then(function(answer1) {
+    inquirer.prompt([{
+      name: "grade2",
+      type: "input",
+      message: "What was your grade for quarter 2?"
+    }]).then(function(answer2) {
+      q1 = parseInt(answer1.grade1);
+      q2 = parseInt(answer2.grade2);
 
-    //calc functions here
-    calculateA();
-    calculateB();
-    calculateC();
-    calculateD();
 
-  }); //end .then2
+      var snarkArr =
 
-}); //end .then1
+        ["Really? You couldn't do any better?", "Seriously? Do you never do warm ups?", "You shoud study more.", "What is Mr. Gatlin doing wrong?"];
+
+      var snark = snarkArr[Math.floor(Math.random() * snarkArr.length)];
+
+      var qSum = (q1 + q2);
+
+      if (qSum < 150) {
+
+        console.log(snark);
+
+      } else {
+        console.log("Not bad, keep it up next semester.");
+      }
+
+      //calc functions here
+      calculateA();
+      calculateB();
+      calculateC();
+      calculateD();
+
+      inquirer.prompt([{
+        name: "restart",
+        type: "confirm",
+        message: "Is the next student ready?",
+        default: "yes"
+      }]).then(function(answer3) {
+        if (answer3.restart === true) {
+          restart();
+        } else {
+          console.log("Good luck on the exam.");
+        }
+      });
+
+    }); //end .then2
+
+  }); //end .then1
+
+}
 
 function calculateD() {
 
@@ -93,3 +126,5 @@ function calculateA() {
 
   console.log("To get a 90, you need a " + exam + " on the exam.");
 } //end calculateA
+
+restart();
