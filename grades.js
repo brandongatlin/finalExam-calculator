@@ -1,8 +1,9 @@
 var inquirer = require("inquirer");
 
-var q1 = '';
-var q2 = '';
-var examRaw;
+var q1 = "";
+var q2 = "";
+var q = "";
+var examRaw = "";
 var exam = "";
 var semesterGrade = "";
 
@@ -19,7 +20,6 @@ inquirer.prompt([{
     q1 = answer1.grade1;
     q2 = answer2.grade2;
 
-
     //calc functions here
     calculateA();
     calculateB();
@@ -27,7 +27,6 @@ inquirer.prompt([{
     calculateD();
 
   }); //end .then2
-
 
 }); //end .then1
 
@@ -45,6 +44,7 @@ function calculateD() {
 } //end calculateD
 
 function calculateC() {
+
   q = (q1 * '.425') + (q2 * '.425');
   // console.log("q is", q);
 
@@ -61,6 +61,7 @@ function calculateC() {
 } //end calculateC
 
 function calculateB() {
+
   q = (q1 * '.425') + (q2 * '.425');
   // console.log("q is", q);
 
@@ -77,6 +78,7 @@ function calculateB() {
 } //end calculateB
 
 function calculateA() {
+
   q = (q1 * '.425') + (q2 * '.425');
   // console.log("q is", q);
 
