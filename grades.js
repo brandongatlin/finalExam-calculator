@@ -24,7 +24,7 @@ function restart() {
 
       var snarkArr =
 
-        ["Really? You couldn't do any better?", "Seriously? Do you never do warm ups?", "You shoud study more.", "What is Mr. Gatlin doing wrong?"];
+        ["Really? You couldn't do any better?", "Seriously? Do you never do warm ups?", "You shoud study more.", "What is Mr. Gatlin doing wrong?", "Quit texting and pay attention next time.", "Sending snaps will be your downfall."];
 
       var snark = snarkArr[Math.floor(Math.random() * snarkArr.length)];
 
